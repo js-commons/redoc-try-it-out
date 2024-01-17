@@ -1,3 +1,4 @@
-dist
+dist/**
+!dist/try-it-out.min.js
 node_modules
 .idea
