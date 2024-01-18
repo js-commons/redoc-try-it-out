@@ -7,9 +7,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "jest && webpack --mode production && tsc -p ./tsconfig.build.json",
+    "build": "npm run test && webpack --mode production && tsc -p ./tsconfig.build.json",
     "lint": "eslint --config .eslintrc.json --ignore-path .eslintignore ./src/**/*.ts --fix",
-    "test": "jest"
+    "test": "jest ./test/**"
   },
   "repository": {
     "type": "git",

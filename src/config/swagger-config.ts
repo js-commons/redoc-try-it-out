@@ -1,7 +1,7 @@
 import {CallbackFunction, SwaggerOptions} from '../interfaces/swagger-options.interface';
 import { Config } from './config';
 
-export class SwaggerConfig extends Config<SwaggerOptions> implements SwaggerOptions {
+export class SwaggerConfig implements SwaggerOptions {
 
     private _resolve: CallbackFunction = () => {}; //eslint-disable-line @typescript-eslint/no-empty-function
     private readonly _onComplete: CallbackFunction = () => {}; //eslint-disable-line @typescript-eslint/no-empty-function
@@ -31,7 +31,7 @@ export class SwaggerConfig extends Config<SwaggerOptions> implements SwaggerOpti
     public readonly version: string = '3.48.0';
 
     constructor(options: SwaggerOptions, url: string, tryItOutEnabled: boolean) {
-        super(options);
+        Config.parseOptions(this, options);
         this.url = url;
         this.tryItOutEnabled = tryItOutEnabled;
         this.onCompletePromise = new Promise<void>(resolve => this._resolve = resolve);
@@ -98,11 +98,11 @@ export class SwaggerConfig extends Config<SwaggerOptions> implements SwaggerOpti
     }
 
     public get bundleUrl(): string {
-        return `${this.cdnUrl}/swagger-ui-dist@${this.version}/swagger-ui-bundle.js`;
+        return `${Config.cdnUrl}/swagger-ui-dist@${this.version}/swagger-ui-bundle.js`;
     }
 
     public get cssUrl(): string {
-        return `${this.cdnUrl}swagger-ui-dist@${this.version}/swagger-ui.css`;
+        return `${Config.cdnUrl}swagger-ui-dist@${this.version}/swagger-ui.css`;
     }
 
     public onComplete = () => {

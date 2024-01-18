@@ -8,9 +8,9 @@ const DEFAULT_REDOC_VERSION = '2.0.0-rc.56';
 const DEFAULT_JQUERY_VERSION = '3.6.0';
 const DEFAULT_JQUERY_SCROLL_VERSION = '2.1.2';
 
-export class RedocTryItOutConfig extends Config<RedocTryItOutOptions> implements RedocTryItOutOptions {
+export class RedocTryItOutConfig implements RedocTryItOutOptions {
 
-    public readonly docUrl;
+    public readonly docUrl: string;
     public readonly element?: HTMLElement;
 
     private readonly _containerId: string = 'redoc-container';
@@ -26,9 +26,8 @@ export class RedocTryItOutConfig extends Config<RedocTryItOutOptions> implements
         jqueryScrollTo: DEFAULT_JQUERY_SCROLL_VERSION
     };
 
-    public constructor(docUrl: string, cfg:RedocTryItOutOptions, element?: HTMLElement) {
-        super(cfg);
-        this.redocVersion = cfg.redocVersion || DEFAULT_REDOC_VERSION;
+    public constructor(docUrl: string, options: RedocTryItOutOptions, element?: HTMLElement) {
+        Config.parseOptions(this, options);
         this.docUrl = docUrl;
         this.element = element;
     }
@@ -64,13 +63,13 @@ export class RedocTryItOutConfig extends Config<RedocTryItOutOptions> implements
     }
 
     public get bundleUrl(): string {
-        return `${this.cdnUrl}/redoc@${this.version}/bundles/redoc.standalone.min.js`
+        return `${Config.cdnUrl}/redoc@${this.version}/bundles/redoc.standalone.min.js`
     }
 
     public get tryItDependencies(): { jqueryUrl: string, jqueryScrollToUrl: string } {
         return {
-            jqueryUrl: `${this.cdnUrl}/jquery@${this.dependenciesVersions.jquery}/dist/jquery.min.js`,
-            jqueryScrollToUrl: `${this.cdnUrl}/jquery.scrollto@${this.dependenciesVersions.jqueryScrollTo}/jquery.scrollTo.min.js`
+            jqueryUrl: `${Config.cdnUrl}/jquery@${this.dependenciesVersions.jquery}/dist/jquery.min.js`,
+            jqueryScrollToUrl: `${Config.cdnUrl}/jquery.scrollto@${this.dependenciesVersions.jqueryScrollTo}/jquery.scrollTo.min.js`
         }
     }
 }

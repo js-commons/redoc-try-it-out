@@ -5,7 +5,7 @@ import { RedocTryItOutConfig } from './redoc-try-it-out-config';
 
 declare let $: any;
 
-export class StyleMatcherConfig extends Config<StyleMatcherOptions> implements StyleMatcherOptions {
+export class StyleMatcherConfig implements StyleMatcherOptions {
 
     private readonly swaggerConfig: SwaggerConfig;
     private readonly redocConfig: RedocTryItOutConfig;
@@ -87,8 +87,8 @@ export class StyleMatcherConfig extends Config<StyleMatcherOptions> implements S
     private readonly _authBtnSourceSelector: string = 'a[href*="swagger.json"]:eq(0)';
     private readonly _httpVerbSourceSelector: string = '[data-section-id] .http-verb';
 
-    public constructor(cfg:StyleMatcherOptions, swaggerConfig: SwaggerConfig, redocConfig: RedocTryItOutConfig) {
-        super(cfg);
+    public constructor(options: StyleMatcherOptions, swaggerConfig: SwaggerConfig, redocConfig: RedocTryItOutConfig) {
+        Config.parseOptions(this, options);
         this.swaggerConfig = swaggerConfig;
         this.redocConfig = redocConfig;
     }
