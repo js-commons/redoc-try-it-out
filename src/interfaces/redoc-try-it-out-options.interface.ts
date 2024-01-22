@@ -1,10 +1,9 @@
-import { AuthBtnOptions } from './auth-btn-options.interface';
-import { SwaggerOptions } from './swagger-options.interface';
-import { TryBtnOptions } from './try-btn-options.interface';
-import { StyleMatcherOptions } from './style-matcher-options.interface';
+import { AuthBtnOptions } from "./auth-btn-options.interface";
+import { SwaggerOptions } from "./swagger-options.interface";
+import { TryBtnOptions } from "./try-btn-options.interface";
+import { StyleMatcherOptions } from "./style-matcher-options.interface";
 
 export interface RedocOptions {
-
   /** disable search indexing and search box */
   disableSearch?: boolean;
   /** enable expanding default server variables, default false.*/
@@ -63,7 +62,7 @@ export interface RedocOptions {
    * This is often useful when there are fixed positioned elements at the top of the page, such as navbars, headers etc;
    * scrollYOffset can be specified in various ways: number: A fixed number of pixels to be used as offset.
    **/
-  scrollYOffset?: number|string;
+  scrollYOffset?: number | string;
   /** selector of the element to be used for specifying the offset.
    * The distance from the top of the page to the element's bottom will be used as offset.
    **/
@@ -73,7 +72,7 @@ export interface RedocOptions {
   /** show vendor extensions ("x-" fields).
    * Extensions used by ReDoc are ignored. Can be boolean or an array of string with names of extensions to display.
    **/
-  showExtensions?: boolean|Array<string>;
+  showExtensions?: boolean | Array<string>;
   /** sort properties alphabetically. */
   sortPropsAlphabetically?: boolean;
   /** if set, payload sample will be inserted at this index or last. Indexes start from 0.*/
@@ -87,139 +86,139 @@ export interface RedocOptions {
 }
 
 export interface ThemOptions {
-
   spacing?: {
     /** main spacing unit used in autocomputed theme values later - default 5 */
-    unit?: number,
+    unit?: number;
     /** Horizontal section padding. COMPUTED: spacing.unit * 8 */
-    sectionHorizontal?: number,
+    sectionHorizontal?: number;
     /** Horizontal section padding. COMPUTED: spacing.unit * 8 */
-    sectionVertical?: number
+    sectionVertical?: number;
   };
 
   /** breakpoints for switching three/two and mobile view layouts */
   breakpoints?: {
     /** '50rem' */
-    small?: string,
+    small?: string;
     /** '85rem' */
-    medium?: string,
+    medium?: string;
     /** '105rem' */
-    large?: string
-  }
+    large?: string;
+  };
 
   colors?: {
     /** default tonal offset used in computations - default 0.3 */
-    tonalOffset?: number
-  }
+    tonalOffset?: number;
+  };
 
   typography?: {
     /** '14px' */
-    fontSize?: string,
+    fontSize?: string;
     /** '1.5em' */
-    lineHeight?: string,
+    lineHeight?: string;
     /** 400 */
-    fontWeightRegular?: number,
+    fontWeightRegular?: number;
     /** 600 */
-    fontWeightBold?: number,
+    fontWeightBold?: number;
     /** 300 */
-    fontWeightLight?: number,
+    fontWeightLight?: number;
     /** 'Roboto, sans-serif' */
-    fontFamily?: string,
+    fontFamily?: string;
     /** 'antialiased' */
-    smoothing?: string,
+    smoothing?: string;
     /** true */
-    optimizeSpeed?: boolean
+    optimizeSpeed?: boolean;
 
     headings?: {
       /** 'Montserrat, sans-serif' */
-      fontFamily?: string,
+      fontFamily?: string;
       /** 400 */
-      fontWeight?: number,
+      fontWeight?: number;
       /** '1.6em' */
-      lineHeight?: string
-    }
+      lineHeight?: string;
+    };
 
     /** inline code styling */
     code?: {
       /** '13px' */
-      fontSize?: string,
+      fontSize?: string;
       /** 'Courier, monospace' */
-      fontFamily?: string,
+      fontFamily?: string;
       /** COMPUTED: typography.lineHeight */
-      lineHeight?: number,
+      lineHeight?: number;
       /** COMPUTED: typography.fontWeightRegular */
-      fontWeight?: number,
+      fontWeight?: number;
       /** '#e53935' */
-      color?: string,
+      color?: string;
       /** 'rgba(38, 50, 56, 0.05)' */
-      backgroundColor?: string,
+      backgroundColor?: string;
       /** whether to break word for inline blocks (otherwise they can overflow) - default: false */
-      wrap?: boolean
-    }
+      wrap?: boolean;
+    };
 
     links?: {
       /** COMPUTED: colors.primary.main */
-      color?: string,
+      color?: string;
       /** COMPUTED: typography.links.color */
-      visited?: string,
+      visited?: string;
       /** COMPUTED: lighten(0.2 typography.links.color) */
-      hover?: string
-    }
-  }
+      hover?: string;
+    };
+  };
 
   menu?: {
     /** '260px' */
-    width?: string,
+    width?: string;
     /** '#fafafa' */
-    backgroundColor?: string,
+    backgroundColor?: string;
     /** '#333333' */
-    textColor?: string,
+    textColor?: string;
     /** COMPUTED: theme.menu.textColor (if set by user) or theme.colors.primary.main */
-    activeTextColor?: string,
+    activeTextColor?: string;
 
     /** Group headings */
-    groupItems?: { //
+    groupItems?: {
+      //
       /** 'uppercase' */
-      textTransform?: string,
-    }
+      textTransform?: string;
+    };
 
     /** Level 1 items like tags or section 1st level items */
     level1Items?: {
       /** 'none' */
-      textTransform?: string
-    }
+      textTransform?: string;
+    };
 
     /** menu arrow */
     arrow?: {
       /** '1.5em' */
-      size?: string,
+      size?: string;
       /** COMPUTED: theme.menu.textColor */
-      color?: string
-    }
-  }
+      color?: string;
+    };
+  };
 
   logo?: {
     /** COMPUTED: menu.width */
-    maxHeight?: string,
+    maxHeight?: string;
     /** COMPUTED: menu.width */
-    maxWidth?: string,
+    maxWidth?: string;
     /** logo image padding - default: '2px' */
-    gutter?: string
-  }
+    gutter?: string;
+  };
 
   rightPanel?: {
     /** '#263238' */
-    backgroundColor?: string,
+    backgroundColor?: string;
     /** '40%' */
-    width?: string,
+    width?: string;
     /** '#ffffff' */
-    textColor?: string
-  }
+    textColor?: string;
+  };
 }
 
 export interface DependenciesVersions {
-  'jquery': string;
-  'jqueryScrollTo': string;
+  jquery: string;
+  jqueryScrollTo: string;
 }
 
 export interface RedocTryItOutOptions extends RedocOptions {
@@ -231,7 +230,7 @@ export interface RedocTryItOutOptions extends RedocOptions {
   selectedOperationClass?: string;
   dependenciesVersions?: DependenciesVersions;
   authBtn?: AuthBtnOptions;
-  tryBtn? : TryBtnOptions;
+  tryBtn?: TryBtnOptions;
   swaggerOptions?: SwaggerOptions;
   stylerMatcher?: StyleMatcherOptions;
 }

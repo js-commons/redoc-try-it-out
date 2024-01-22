@@ -11,7 +11,7 @@
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "sourceMap": false
+    "sourceMap": false,
   },
-  "exclude": ["node_modules", "**/*spec.ts"]
+  "exclude": ["node_modules", "**/*spec.ts"],
 }

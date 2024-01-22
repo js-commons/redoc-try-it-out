@@ -1,5 +1,4 @@
 export interface StyleMatcherOptions {
-
   informationContainerTargetSelector?: string;
   schemeContainerTargetSelector?: string;
   modelsContainerTargetSelector?: string;
