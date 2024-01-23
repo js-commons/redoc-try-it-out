@@ -15,8 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amorimjj/redoc-try-it-out.git"
+    "url": "git+https://github.com/RedocCommunity/redoc-try-it-out.git"
   },
+  "contributors": [
+    {
+      "name": "Jarl André Hübenthal",
+      "email": "jarlah@protonmail.com",
+      "url": "https://github.com/jarlah"
+    }
+  ],
   "author": "amorimjj",
   "keywords": [
     "redoc",
