@@ -43,11 +43,11 @@ Online preview [Pet Store](https://amorimjj.github.io/redoc-try-it-out.html) liv
 
 For latest version:
 
-`<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RedocCommunity/redoc-try-it-out@main/dist/try-it-out.min.js"></script>`
+`<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CommunityExtensions/redoc-try-it-out@main/dist/try-it-out.min.js"></script>`
 
 For specific commit:
 
-`<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/RedocCommunity/redoc-try-it-out@<COMMIT_SHA>/dist/try-it-out.min.js"></script>`
+`<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/CommunityExtensions/redoc-try-it-out@<COMMIT_SHA>/dist/try-it-out.min.js"></script>`
 
 replace `<COMMIT_SHA>` with the commit you want to lock onto.
 
