@@ -51,6 +51,7 @@ interface IStyle {
   visibility?: "hidden" | "visible";
   width?: number | string;
   "z-index"?: number;
+  "word-wrap"?: "normal" | "break-word" | "initial" | "inherit";
 }
 
 class Style {

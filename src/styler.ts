@@ -137,7 +137,7 @@ export class Styler {
       .noPadding()
       .add(Styler.cfg.parameterNameFieldTargetSelector)
       .cloneFont(Styler.cfg.$fieldSource)
-      .style({ float: "right", width: "60px" })
+      .style({ float: "right", width: "60px", "word-wrap": "break-word" })
       .add(Styler.cfg.parameterRequiredTargetSelector)
       .noPadding()
       .cloneFont(Styler.cfg.$requiredFieldSource)
