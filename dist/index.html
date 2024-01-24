@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script type="text/javascript" src="./try-it-out.min.js"></script>
+    </head>
+    <body>
+        <div id="redoc_container"></div>
+        <script>
+            RedocTryItOut.init(
+                "https://petstore.swagger.io/v2/swagger.json",
+                { title: "Pet Store" },
+                document.getElementById("redoc_container"),
+            );
+        </script>
+    </body>
+</html>
