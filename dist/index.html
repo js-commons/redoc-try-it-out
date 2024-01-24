@@ -1,15 +1,30 @@
 <html>
     <head>
         <script type="text/javascript" src="./try-it-out.min.js"></script>
+        <!-- <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css" /> -->
     </head>
     <body>
         <div id="redoc_container"></div>
+        <!-- <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js" crossorigin></script> -->
         <script>
+            // SwaggerUIBundle({
+            //     url: "./openapi.yaml",
+            //     dom_id: '#redoc_container',
+            //     presets: [
+            //     SwaggerUIBundle.presets.apis,
+            //     SwaggerUIBundle.SwaggerUIStandalonePreset
+            //     ],
+            // })
             RedocTryItOut.init(
                 "https://petstore.swagger.io/v2/swagger.json",
                 { title: "Pet Store" },
                 document.getElementById("redoc_container"),
             );
+            // RedocTryItOut.init(
+            //     "./openapi.yaml",
+            //     { title: "Pet Store" },
+            //     document.getElementById("redoc_container"),
+            // );
         </script>
     </body>
 </html>

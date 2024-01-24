@@ -11,8 +11,8 @@ export class StyleMatcherConfig implements StyleMatcherOptions {
 
   private readonly _informationContainerTargetSelector: string =
     ".swagger-ui .information-container";
-  private readonly _schemeContainerTargetSelector: string =
-    ".swagger-ui .scheme-container";
+  private readonly _authWrapperTargetSelector: string =
+    ".swagger-ui .auth-wrapper";
   private readonly _modelsContainerTargetSelector: string =
     ".swagger-ui .models";
 
@@ -152,8 +152,8 @@ export class StyleMatcherConfig implements StyleMatcherOptions {
     return `${this.swaggerConfig.boxSelector}.${this.swaggerConfig.showClass} ${this._informationContainerTargetSelector}`;
   }
 
-  public get openedSchemeContainerTargetSelector(): string {
-    return `${this.swaggerConfig.boxSelector}.${this.swaggerConfig.showClass} ${this._schemeContainerTargetSelector}`;
+  public get openedAuthWrapperTargetSelector(): string {
+    return `${this.swaggerConfig.boxSelector}.${this.swaggerConfig.showClass} ${this._authWrapperTargetSelector}`;
   }
 
   public get openedModelsContainerTargetSelector(): string {

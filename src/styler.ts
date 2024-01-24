@@ -219,7 +219,7 @@ export class Styler {
       .noDisplay()
       .add(Styler.cfg.openedInformationContainerTargetSelector)
       .noDisplay()
-      .add(Styler.cfg.openedSchemeContainerTargetSelector)
+      .add(Styler.cfg.openedAuthWrapperTargetSelector)
       .noDisplay()
       .add(Styler.cfg.openedModelsContainerTargetSelector)
       .noDisplay();
