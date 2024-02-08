@@ -53,6 +53,9 @@ export class RedocTryItOut {
     RedocTryItOut.config(docUrl, cfg, element);
 
     if (RedocWrapper.cfg.tryItOutEnabled) {
+      if (cfg.swaggerOptions?.disableZenscroll) {
+        (window as any).noZensmooth = true;
+      }
       await RedocTryItOut.loadAll();
       AuthBtn.init();
       TryBtn.init();

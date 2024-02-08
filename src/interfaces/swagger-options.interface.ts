@@ -17,4 +17,8 @@ export interface SwaggerOptions {
   selectedOperationContainerClass?: string;
   wrapperSelector?: string;
   onComplete?: CallbackFunction;
+  // This is not actually a Swagger UI option, but it's used in the code to disable zenscroll
+  // and its on by default if swaggerOptions is passed in to the RedocTryItOutConfig
+  // Extra options like this that are passed into Swagger UI will be ignored anyway
+  disableZenscroll?: boolean;
 }

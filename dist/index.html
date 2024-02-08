@@ -16,8 +16,13 @@
             //     ],
             // })
             RedocTryItOut.init(
-                "https://petstore.swagger.io/v2/swagger.json",
-                { title: "Pet Store" },
+                "./openapi.json",
+                { 
+                    title: "Pet Store", 
+                    swaggerOptions: { 
+                        disableZenscroll: true 
+                    }
+                },
                 document.getElementById("redoc_container"),
             );
             // RedocTryItOut.init(

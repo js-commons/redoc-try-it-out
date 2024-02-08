@@ -35,6 +35,7 @@ export class SwaggerConfig implements SwaggerOptions {
   public readonly hideClass: string = "hide";
   public readonly showClass: string = "show";
   public readonly selectedOperationContainerClass: string = "opened-shadow";
+  public readonly disableZenscroll: boolean = true;
 
   public readonly version: string = "3.48.0";
 
