@@ -50,12 +50,14 @@ export class RedocTryItOut {
     cfg: RedocTryItOutOptions,
     element?: HTMLElement,
   ): Promise<void> {
+    // This parses and sets the config on the static cfg property on the RedocWrapper class
     RedocTryItOut.config(docUrl, cfg, element);
 
+    if (RedocWrapper.cfg.disableZenscroll) {
+      (window as any).noZensmooth = true;
+    }
+
     if (RedocWrapper.cfg.tryItOutEnabled) {
-      if (cfg.swaggerOptions?.disableZenscroll) {
-        (window as any).noZensmooth = true;
-      }
       await RedocTryItOut.loadAll();
       AuthBtn.init();
       TryBtn.init();
