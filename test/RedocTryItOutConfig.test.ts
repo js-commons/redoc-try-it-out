@@ -13,20 +13,36 @@ describe("RedocTryItOutConfig", () => {
         jquery: "0.1",
         jqueryScrollTo: "0.3",
       },
+      theme: {
+        spacing: {
+          unit: 4,
+          sectionHorizontal: 20,
+          sectionVertical: 10,
+        },
+      },
     });
 
-    expect(config.redocVersion).toEqual("foo");
-    expect(config.tryItOutEnabled).toEqual(false);
-    expect(config.tryItBoxContainerId).toEqual("other-tryItBoxContainerId");
-    expect(config.containerId).toEqual("other-containerId");
+    expect(config.options.redocVersion).toEqual("foo");
+    expect(config.options.tryItOutEnabled).toEqual(false);
+    expect(config.options.tryItBoxContainerId).toEqual(
+      "other-tryItBoxContainerId",
+    );
+    expect(config.options.containerId).toEqual("other-containerId");
     expect(config.containerSelector).toEqual("#other-containerId");
     expect(config.operationBoxSelector).toEqual(
       "#other-containerId other-operationBoxSelector",
     );
-    expect(config.selectedOperationClass).toEqual("dont-try");
-    expect(config.dependenciesVersions).toEqual({
+    expect(config.options.selectedOperationClass).toEqual("dont-try");
+    expect(config.options.dependenciesVersions).toEqual({
       jquery: "0.1",
       jqueryScrollTo: "0.3",
+    });
+    expect(config.options.theme).toEqual({
+      spacing: {
+        unit: 4,
+        sectionHorizontal: 20,
+        sectionVertical: 10,
+      },
     });
   });
 });

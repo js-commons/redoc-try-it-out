@@ -37,6 +37,7 @@ export class SwaggerConfig implements SwaggerOptions {
   public readonly selectedOperationContainerClass: string = "opened-shadow";
 
   public readonly version: string = "3.48.0";
+  public readonly cdnUrl: string = Config.cdnUrl;
 
   constructor(options: SwaggerOptions, url: string, tryItOutEnabled: boolean) {
     Config.parseOptions(this, options);
@@ -108,11 +109,11 @@ export class SwaggerConfig implements SwaggerOptions {
   }
 
   public get bundleUrl(): string {
-    return `${Config.cdnUrl}/swagger-ui-dist@${this.version}/swagger-ui-bundle.js`;
+    return `${this.cdnUrl}/swagger-ui-dist@${this.version}/swagger-ui-bundle.js`;
   }
 
   public get cssUrl(): string {
-    return `${Config.cdnUrl}swagger-ui-dist@${this.version}/swagger-ui.css`;
+    return `${this.cdnUrl}/swagger-ui-dist@${this.version}/swagger-ui.css`;
   }
 
   public onComplete = () => {

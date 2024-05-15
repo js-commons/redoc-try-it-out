@@ -19,5 +19,5 @@ export const Config = {
     });
   },
 
-  cdnUrl: "https://cdn.jsdelivr.net/npm/",
+  cdnUrl: "https://cdn.jsdelivr.net/npm",
 };
