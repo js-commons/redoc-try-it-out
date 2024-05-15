@@ -24,7 +24,7 @@ export class RedocWrapper {
     const $tryItBox = $(RedocWrapper.cfg.tryItBoxSelector);
     return $tryItBox.length
       ? $tryItBox
-      : $(`<div id="${RedocWrapper.cfg.tryItBoxContainerId}"></div>`);
+      : $(`<div id="${RedocWrapper.cfg.options.tryItBoxContainerId}"></div>`);
   }
 
   private static moveTryApiContainer(): void {
@@ -46,7 +46,7 @@ export class RedocWrapper {
     const promise = new Promise<void>((resolve, reject): void => {
       Redoc.init(
         RedocWrapper.cfg.docUrl,
-        RedocWrapper.cfg,
+        RedocWrapper.cfg.options,
         RedocWrapper.domElement,
         (e: Error) => (e ? reject(e) : resolve()),
       );
@@ -57,14 +57,14 @@ export class RedocWrapper {
 
   public static configureTryBox(): void {
     RedocWrapper.$operationBox.addClass(
-      RedocWrapper.cfg.selectedOperationClass,
+      RedocWrapper.cfg.options.selectedOperationClass || "",
     );
     RedocWrapper.moveTryApiContainer();
   }
 
   public static hide(): void {
     RedocWrapper.$operationBox.removeClass(
-      RedocWrapper.cfg.selectedOperationClass,
+      RedocWrapper.cfg.options.selectedOperationClass,
     );
   }
 

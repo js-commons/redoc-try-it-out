@@ -17,4 +17,5 @@ export interface SwaggerOptions {
   selectedOperationContainerClass?: string;
   wrapperSelector?: string;
   onComplete?: CallbackFunction;
+  cdnUrl?: string;
 }

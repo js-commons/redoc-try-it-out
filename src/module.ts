@@ -29,9 +29,12 @@ export class RedocTryItOut {
   ): void {
     RedocWrapper.cfg = new RedocTryItOutConfig(url, cfg, element);
 
-    if (RedocWrapper.cfg.tryItOutEnabled) {
+    if (RedocWrapper.cfg.options.tryItOutEnabled) {
       SwaggerWrapper.cfg = new SwaggerConfig(
-        cfg.swaggerOptions || {},
+        {
+          cdnUrl: RedocWrapper.cfg.options.cdnUrl,
+          ...(cfg.swaggerOptions || {}),
+        },
         url,
         true,
       );
@@ -53,11 +56,11 @@ export class RedocTryItOut {
     // This parses and sets the config on the static cfg property on the RedocWrapper class
     RedocTryItOut.config(docUrl, cfg, element);
 
-    if (RedocWrapper.cfg.disableZenscroll) {
+    if (RedocWrapper.cfg.options.disableZenscroll) {
       (window as any).noZensmooth = true;
     }
 
-    if (RedocWrapper.cfg.tryItOutEnabled) {
+    if (RedocWrapper.cfg.options.tryItOutEnabled) {
       await RedocTryItOut.loadAll();
       AuthBtn.init();
       TryBtn.init();
