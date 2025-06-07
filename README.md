@@ -1,3 +1,7 @@
+# deprecated
+
+A much better option is to use redoc and swagger individually. A good example of this can be seen høre https://data.brreg.no/enhetsregisteret/api/dokumentasjon
+
 <h1 align="center">
     Redoc - Try Out
     <h4 align="center">
